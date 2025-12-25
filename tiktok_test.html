@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna TikTok 연동 테스트</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .btn {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Luna 앱 심사 촬영용 (Demo)</h1>
+    <p>아래 버튼을 눌러 틱톡 로그인 과정을 녹화하세요.</p>
+    <br><br>
+    
+    <a id="tiktok-btn" href="#" class="btn">
+        TikTok으로 계속하기 (Log in)
+    </a>
+
+    <script>
+        // 사용자분의 Client Key가 적용되었습니다.
+        const CLIENT_KEY = 'awurrtablerndg5u'; 
+        const REDIRECT_URI = 'https://teamlunaaiglobal.github.io/';
+        
+        // 틱톡 로그인 주소 생성
+        const AUTH_URL = `https://www.tiktok.com/v2/auth/authorize/?client_key=${CLIENT_KEY}&scope=user.info.basic&response_type=code&redirect_uri=${REDIRECT_URI}&state=random_123`;
+
+        document.getElementById('tiktok-btn').href = AUTH_URL;
+    </script>
+</body>
+</html>
